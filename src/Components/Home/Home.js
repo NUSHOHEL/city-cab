@@ -19,7 +19,7 @@ const Home = () => {
                         <div className="card h-100 w-75 text-center p-4">
                             <img src={vehicle.image} className="card-img-top" alt="..." />
                             <div className="card-body">
-                                <h5 className="card-text">{vehicle.vehicleType}</h5>
+                                <h5 className="card-text text-dark "><strong>{vehicle.vehicleType}</strong> </h5>
                             </div>
                         </div>
 

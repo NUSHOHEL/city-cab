@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers,faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import NavBar from '../NavBar/NavBar';
-import map from '../../images/Map.png'
 import './Destination.css'
 import { useParams } from 'react-router';
 import fakeVehicle from '../../FakeData/FakeVehicle';
@@ -42,11 +41,11 @@ const Destination = () => {
   
 
     return (
-        <div className='home'>
+        <div className='bg-img'>
   <div className='container'>
             <NavBar />
             <div className='row'>
-                <div className='text-center mt-5 col-md-4 col-sm-6 p-4  h-100 '>
+                <div className='text-center mt-5 col-md-4 col-sm-6 p-2  h-100 '>
                     <div style={{ display: submit ? 'none' : 'block' }} className='border p-4 mt-5 bg-secondary rounded-3' >
                         <label htmlFor="pick"> Pick From</label>
                         <input onBlur={handleBlur} className="form-control" type="text" id='pick' />

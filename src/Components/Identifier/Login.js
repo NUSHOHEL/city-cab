@@ -188,7 +188,7 @@ const Login = () => {
                    {newUser && <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="confirmPassword" placeholder="Confirm Password" required />}
                     <p>{errmessage}</p>
                     
-                    <input type="submit" className=" form-control rounded-pill btn btn-primary" value={newUser?'Sign Up': 'Login'} />
+                    <input type="submit" className=" form-control btn btn-primary" value={newUser?'Sign Up': 'Login'} />
                 
                 </form>
                 <div>
