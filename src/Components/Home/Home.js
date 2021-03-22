@@ -16,7 +16,7 @@ const Home = () => {
                 {
                     fakedata.map(vehicle => <div className="col" key={vehicle.key}>
                         <Link to={`/destination/${vehicle.vehicleType}`}style={{ textDecoration: 'none' }}>
-                        <div className="card h-100 text-center p-4">
+                        <div className="card h-100 w-75 text-center p-4">
                             <img src={vehicle.image} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-text">{vehicle.vehicleType}</h5>

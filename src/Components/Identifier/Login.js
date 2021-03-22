@@ -173,22 +173,22 @@ const Login = () => {
 
 
     return (
-
-        <div className='container'>
+<div className='home'>
+<div className='container'>
             <NavBar />
-            <div className='border container w-50 text-center py-3 mt-5'>
+            <div className=' container w-50 text-center text-light py-3 mt-5'>
                 {newUser ? <h1>Create Your Account</h1> : <h1>Login</h1>}
 
 
                 <form onSubmit={submitData} className='text-center mt-5'>
-                    {newUser && <input onBlur={getInfo} type="name" className="form-control mb-3" name="displayName" placeholder='Name' required />}
-                    <input onBlur={getInfo} type="email" className="form-control mb-3" name="email" placeholder='Email' required />
-                    <input onBlur={getInfo} type="password" className="form-control mb-3" name="password" placeholder="Password" required />
+                    {newUser && <input onBlur={getInfo} type="name" className="form-control rounded-pill mb-3" name="displayName" placeholder='Name' required />}
+                    <input onBlur={getInfo} type="email" className="form-control rounded-pill mb-3" name="email" placeholder='Email' required />
+                    <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="password" placeholder="Password" required />
                     
-                   {newUser && <input onBlur={getInfo} type="password" className="form-control mb-3" name="confirmPassword" placeholder="Confirm Password" required />}
+                   {newUser && <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="confirmPassword" placeholder="Confirm Password" required />}
                     <p>{errmessage}</p>
                     
-                    <input type="submit" className=" form-control btn btn-primary" value={newUser?'Sign Up': 'Login'} />
+                    <input type="submit" className=" form-control rounded-pill btn btn-primary" value={newUser?'Sign Up': 'Login'} />
                 
                 </form>
                 <div>
@@ -200,12 +200,14 @@ const Login = () => {
 
             </div>
             <div className='container text-center' >
-                <button onClick={googleSignin} className="btn w-25 border m-3 text-primary rounded-pill"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</button>
+                <button onClick={googleSignin} className="btn  text-light w-25 border m-3 rounded-pill"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</button>
                 <br />
-                <button onClick={fbSignin} className="btn border text-primary w-25 m-3 rounded-pill"><FontAwesomeIcon icon={faFacebook} /> Continue With Facebook</button>
+                <button onClick={fbSignin} className="btn  text-light border w-25 m-3 rounded-pill"><FontAwesomeIcon icon={faFacebook} /> Continue With Facebook</button>
                 <br />
             </div>
         </div>
+</div>
+       
     );
 };
 
