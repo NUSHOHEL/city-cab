@@ -1,0 +1,12 @@
+.search-result img{
+    width:55px;
+    height: 40px;
+    padding: 5px;
+
+}
+.search-vehicle{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
