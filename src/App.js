@@ -8,7 +8,7 @@ import {
 import Destination from './Components/Destination/Destination';
 import Login from './Components/Identifier/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import NavBar from './Components/NavBar/NavBar';
+// import NavBar from './Components/NavBar/NavBar';
 
 
 

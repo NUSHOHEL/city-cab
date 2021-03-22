@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { faFacebook,faGoogle } from "@fortawesome/free-brands-svg-icons"
-
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../fireConfig';
@@ -34,13 +32,9 @@ const Login = () => {
 
     const getInfo = (e) => {
         let isFormValid = true;
- 
-
         if (e.target.name === 'email') {
             isFormValid = /\S+@\S+\.\S+/.test(e.target.value);
-
-        }
-       
+        }    
         if (e.target.name === 'password') {
            let validPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(e.target.value)
             if (validPass) {
@@ -60,17 +54,12 @@ const Login = () => {
                 }
             else { setErrMessage('Password not Match With Privious One') }
         }
-            
-
-        
-        
+             
         if (isFormValid) {
             const newUser = { ...user }
             newUser[e.target.name] = e.target.value;
             setUser(newUser);
         }
-
-
     }
     const submitData = (e) => {
         if (newUser && user.email && user.password) {
@@ -83,7 +72,6 @@ const Login = () => {
                     setUser(newUserinfo);
                     updateUserName(user.displayName);
                     setloggedinuser(newUserinfo);
-
                     history.replace(from);
 
                 })
@@ -111,7 +99,6 @@ const Login = () => {
                 });
         }
         e.preventDefault();
-
     }
     const googleSignin = () => {
         const Google = new firebase.auth.GoogleAuthProvider();
@@ -155,7 +142,6 @@ const Login = () => {
                 var errorMessage = error.message;
                 var credential = error.credential;
                 console.log(errorCode, errorMessage, credential)
-
             });
     }
     const updateUserName = name =>{
@@ -170,34 +156,26 @@ const Login = () => {
         });
         console.log(name);
       }
-
-
     return (
 <div className='home'>
 <div className='container'>
             <NavBar />
             <div className=' container w-50 text-center text-light py-3 mt-5'>
                 {newUser ? <h1>Create Your Account</h1> : <h1>Login</h1>}
-
-
                 <form onSubmit={submitData} className='text-center mt-5'>
                     {newUser && <input onBlur={getInfo} type="name" className="form-control rounded-pill mb-3" name="displayName" placeholder='Name' required />}
                     <input onBlur={getInfo} type="email" className="form-control rounded-pill mb-3" name="email" placeholder='Email' required />
-                    <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="password" placeholder="Password" required />
-                    
+                    <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="password" placeholder="Password" required />                   
                    {newUser && <input onBlur={getInfo} type="password" className="form-control rounded-pill mb-3" name="confirmPassword" placeholder="Confirm Password" required />}
                     <p>{errmessage}</p>
                     
-                    <input type="submit" className=" form-control btn btn-primary" value={newUser?'Sign Up': 'Login'} />
-                
+                    <input type="submit" className=" form-control btn btn-primary" value={newUser?'Sign Up': 'Login'} />               
                 </form>
                 <div>
                     {newUser ? <p>Already have an account?<span style={{ fontWeight: 'bolder', color:'red', cursor:'pointer' }} onClick={() => setNewuser(!newUser)} > Login</span> </p> : <p>Don't have an account <span style={{ fontWeight: 'bolder', color:'red', cursor:'pointer'  }} onClick={() => setNewuser(!newUser)}>Sign Up</span></p>}
                     <p style={{ color: "red" }}>{user.error}</p>
-                    { user.success && <p style={{color: 'green'}}>User { newUser ? 'created' : 'Logged In'} successfully</p>}
-                    
+                    { user.success && <p style={{color: 'green'}}>User { newUser ? 'created' : 'Logged In'} successfully</p>}                    
                 </div>
-
             </div>
             <div className='container text-center' >
                 <button onClick={googleSignin} className="btn  text-light w-25 border m-3 rounded-pill"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</button>
